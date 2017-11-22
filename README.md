@@ -5,3 +5,5 @@ The course [Spatial analysis in R with sf and raster](https://github.com//dataca
 > test failed with backend-error: Error: Fail because of runtime error: Cannot create a RasterLayer object from this file.
 
 This course attempts to provide a minimal reproducible example of the problem in order to diagnose the underlying issue.
+
+This course on Teach: https://www.datacamp.com/teach/repositories/1890
