@@ -23,11 +23,6 @@ Run the code to download the tif file and import it as a raster object.
 
 `@pre_exercise_code`
 ```{r}
-
-```
-
-`@sample_code`
-```{r}
 library(raster)
 
 download.file(
@@ -35,18 +30,16 @@ download.file(
   "canopy.zip"
 )
 unzip("canopy.zip")
+```
+
+`@sample_code`
+```{r}
 canopy <- raster("canopy.tif")
 ```
 
 `@solution`
 ```{r}
-library(raster)
 
-download.file(
-  "http://s3.amazonaws.com/assets.datacamp.com/production/course_5973/datasets/canopy.zip", 
-  "canopy.zip"
-)
-unzip("canopy.zip")
 canopy <- raster("canopy.tif")
 ```
 
