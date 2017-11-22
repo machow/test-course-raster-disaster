@@ -1,4 +1,3 @@
-
 ---
 title: Example Raster Disasters
 description: >-
