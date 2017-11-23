@@ -39,11 +39,10 @@ canopy <- raster("canopy.tif")
 
 `@solution`
 ```{r}
-
 canopy <- raster("canopy.tif")
 ```
 
 `@sct`
 ```{r}
-
+success_msg("You did it!")
 ```
