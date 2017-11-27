@@ -83,6 +83,9 @@ download.file(
   "manhattan.zip"
 )
 
+unzip("manhattan.zip")
+unzip("canopy.zip")
+
 canopy <- raster("canopy.tif")
 manhattan <- brick("manhattan.tif")
 ```
