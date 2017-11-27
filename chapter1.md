@@ -151,6 +151,9 @@ lapply(files, function(x){
   unzip(file1)
 }
 )
+
+canopy <- raster("canopy.tif")
+manhattan <- brick("manhattan.tif")
 ```
 
 `@sample_code`
