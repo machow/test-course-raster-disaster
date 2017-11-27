@@ -118,3 +118,66 @@ plotRGB(manhattan)
 ```{r}
 
 ```
+
+
+
+
+---
+## Try with lapply
+
+```yaml
+type: NormalExercise
+key: 182f6a00aa
+lang: r
+xp: 100
+skills: 1
+```
+
+Run the code. 
+
+`@instructions`
+
+`@hint`
+
+`@pre_exercise_code`
+```{r}
+library(raster)
+files <- c("manhattan", "canopy")
+
+lapply(files, function(x){
+  url1 <- sprintf("http://s3.amazonaws.com/assets.datacamp.com/production/course_4422/datasets/%s.zip", x)
+  file1 <- sprintf("%s.zip", x)
+  download.file(url1, file1)
+  unzip(file1)
+}
+)
+```
+
+`@sample_code`
+```{r}
+# Plot the canopy raster (single raster)
+plot(canopy)
+
+# Plot the manhattan raster (as a single image for each layer)
+plot(manhattan)
+
+# Plot the manhattan raster as an image
+plotRGB(manhattan)
+```
+
+`@solution`
+```{r}
+# Plot the canopy raster (single raster)
+plot(canopy)
+
+# Plot the manhattan raster (as a single image for each layer)
+plot(manhattan)
+
+# Plot the manhattan raster as an image
+plotRGB(manhattan)
+```
+
+`@sct`
+```{r}
+
+```
