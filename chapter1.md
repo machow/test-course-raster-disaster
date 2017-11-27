@@ -2,7 +2,8 @@
 title: Example Raster Disasters
 description: >-
   Example exercises that demonstrate the issues with raster::raster().
---- type:NormalExercise lang:r xp:100 skills:1 key:
+  
+---
 ## Load canopy data from tif
 
 ```yaml
