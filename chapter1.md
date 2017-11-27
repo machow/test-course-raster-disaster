@@ -52,7 +52,7 @@ success_msg("You did it!")
 
 
 ---
-## ## Load Manhattan data from tif
+## Load Manhattan data from tif
 
 ```yaml
 type: NormalExercise
@@ -72,15 +72,17 @@ Run the code.
 `@pre_exercise_code`
 ```{r}
 library(raster)
-files <- c("manhattan", "canopy")
 
-lapply(files, function(x){
-  url1 <- sprintf("http://s3.amazonaws.com/assets.datacamp.com/production/course_4422/datasets/%s.zip", x)
-  file1 <- sprintf("%s.zip", x)
-  download.file(url1, file1)
-  unzip(file1)
-}
+download.file(
+  "http://s3.amazonaws.com/assets.datacamp.com/production/course_5973/datasets/canopy.zip", 
+  "canopy.zip"
 )
+
+download.file(
+  "http://s3.amazonaws.com/assets.datacamp.com/production/course_4422/datasets/manhattan.zip", 
+  "manhattan.zip"
+)
+
 canopy <- raster("canopy.tif")
 manhattan <- brick("manhattan.tif")
 ```
