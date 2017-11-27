@@ -364,6 +364,7 @@ lapply(files, function(x){
   file1 <- sprintf("%s.zip", x)
   download.file(url1, file1)
   unzip(file1)
+  Sys.sleep(0.5)
 }
 )
 
