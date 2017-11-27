@@ -47,3 +47,69 @@ canopy <- raster("canopy.tif")
 ```{r}
 success_msg("You did it!")
 ```
+
+
+
+
+---
+## ## Load Manhattan data from tif
+
+```yaml
+type: NormalExercise
+key: 66c5289c53
+lang: r
+xp: 100
+skills: 1
+```
+
+
+`@instructions`
+
+Run the code. 
+
+`@hint`
+
+`@pre_exercise_code`
+```{r}
+library(raster)
+files <- c("manhattan", "canopy")
+
+lapply(files, function(x){
+  url1 <- sprintf("http://s3.amazonaws.com/assets.datacamp.com/production/course_4422/datasets/%s.zip", x)
+  file1 <- sprintf("%s.zip", x)
+  download.file(url1, file1)
+  unzip(file1)
+}
+)
+canopy <- raster("canopy.tif")
+manhattan <- brick("manhattan.tif")
+```
+
+`@sample_code`
+```{r}
+# Plot the canopy raster (single raster)
+plot(canopy)
+
+# Plot the manhattan raster (as a single image for each layer)
+plot(manhattan)
+
+# Plot the manhattan raster as an image
+plotRGB(manhattan)
+```
+
+`@solution`
+```{r}
+# Plot the canopy raster (single raster)
+plot(canopy)
+
+# Plot the manhattan raster (as a single image for each layer)
+plot(manhattan)
+
+# Plot the manhattan raster as an image
+plotRGB(manhattan)
+```
+
+`@sct`
+```{r}
+
+```
