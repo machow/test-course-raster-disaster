@@ -538,3 +538,53 @@ impervious <- raster("impervious.tif")
 ```{r}
 
 ```
+
+
+
+
+---
+## Canopy - again
+
+```yaml
+type: NormalExercise
+key: 1e044b90da
+lang: r
+xp: 100
+skills: 1
+```
+
+
+`@instructions`
+
+Run the code. 
+
+`@hint`
+
+`@pre_exercise_code`
+```{r}
+download.file(
+  "http://s3.amazonaws.com/assets.datacamp.com/production/course_5973/datasets/canopy.zip", 
+  "canopy.zip"
+)
+
+
+unzip("canopy.zip")
+
+
+library(raster)
+```
+
+`@sample_code`
+```{r}
+canopy <- raster("canopy.tif")
+```
+
+`@solution`
+```{r}
+canopy <- raster("canopy.tif")
+```
+
+`@sct`
+```{r}
+
+```
