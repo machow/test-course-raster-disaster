@@ -281,6 +281,8 @@ Run the code.
 
 `@pre_exercise_code`
 ```{r}
+library(raster)
+library(sf)
 files <- c("neighborhoods", "manhattan")
 
 lapply(files, function(x){
@@ -290,10 +292,10 @@ lapply(files, function(x){
   unzip(file1)
 }
 )
-library(raster)
+
 manhattan <- brick("manhattan.tif")
 # Load the sf package
-library(sf)
+
 
 #'___BLOCK_SOLUTION_EXEC___'
 ```
@@ -357,6 +359,7 @@ Run the code.
 
 `@pre_exercise_code`
 ```{r}
+library(raster)
 files <- c("canopy", "impervious")
 
 lapply(files, function(x){
@@ -368,7 +371,7 @@ lapply(files, function(x){
 }
 )
 
-library(raster)
+
 ```
 
 `@sample_code`
@@ -432,6 +435,7 @@ Run the code.
 
 `@pre_exercise_code`
 ```{r}
+library(raster)
 
 download.file(
   "http://s3.amazonaws.com/assets.datacamp.com/production/course_5973/datasets/canopy.zip", 
@@ -446,7 +450,7 @@ download.file(
 unzip("canopy.zip")
 unzip("impervious.zip")
 
-library(raster)
+
 ```
 
 `@sample_code`
@@ -512,6 +516,7 @@ Run the code.
 
 `@pre_exercise_code`
 ```{r}
+library(raster)
 
 download.file(
   "http://s3.amazonaws.com/assets.datacamp.com/production/course_4422/datasets/impervious.zip", 
@@ -521,7 +526,7 @@ download.file(
 
 unzip("impervious.zip")
 
-library(raster)
+
 ```
 
 `@sample_code`
