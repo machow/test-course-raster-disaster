@@ -562,6 +562,8 @@ Run the code.
 
 `@pre_exercise_code`
 ```{r}
+library(raster)
+
 download.file(
   "http://s3.amazonaws.com/assets.datacamp.com/production/course_5973/datasets/canopy.zip", 
   "canopy.zip"
@@ -571,7 +573,7 @@ download.file(
 unzip("canopy.zip")
 
 
-library(raster)
+
 ```
 
 `@sample_code`
