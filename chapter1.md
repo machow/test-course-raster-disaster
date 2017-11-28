@@ -490,3 +490,51 @@ plot(canopy_imperv_overlay)
 
 ```
 
+
+
+
+---
+## Impervious
+
+```yaml
+type: NormalExercise
+key: f68e99c689
+lang: r
+xp: 100
+skills: 1
+```
+
+
+`@instructions`
+Run the code.
+
+`@hint`
+
+`@pre_exercise_code`
+```{r}
+
+download.file(
+  "http://s3.amazonaws.com/assets.datacamp.com/production/course_4422/datasets/impervious.zip", 
+  "impervious.zip"
+)
+
+
+unzip("impervious.zip")
+
+library(raster)
+```
+
+`@sample_code`
+```{r}
+impervious <- raster("impervious.tif")
+```
+
+`@solution`
+```{r}
+impervious <- raster("impervious.tif")
+```
+
+`@sct`
+```{r}
+
+```
