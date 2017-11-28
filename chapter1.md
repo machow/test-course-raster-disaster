@@ -569,7 +569,7 @@ download.file(
   "canopy.zip"
 )
 
-
+Sys.sleep(0.5)
 unzip("canopy.zip")
 
 
