@@ -9,3 +9,9 @@ install_version("rgdal", "1.2-16")
 install_version("pryr", "0.1.2")
 install_version("tmap", "1.10", type = "source")
 install_github("tidyverse/ggplot2")
+
+.data_dir <- "/usr/local/share/datasets"
+dir.create(.data_dir)
+
+
+cat(sprintf('.data_dir <- "%s"\n', .data_dir), file = "/etc/R/Rprofile.site", append = TRUE)
