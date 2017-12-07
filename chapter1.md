@@ -36,16 +36,49 @@ unzip("canopy.zip")
 
 `@sample_code`
 ```{r}
+# Load the raster package
+library(raster)
+
+# Read in the rasters
 canopy <- raster("canopy.tif")
+
+# Get the extent of the canopy object
+extent(canopy)
+
+ncell(canopy)
 ```
 
 `@solution`
 ```{r}
+# Load the raster package
+library(raster)
+
+# Read in the rasters
 canopy <- raster("canopy.tif")
+
+# Get the extent of the canopy object
+extent(canopy)
+
+ncell(canopy)
 ```
 
 `@sct`
 ```{r}
+msg1 <- 'Did you call `%s()` on `"%s.tif"` and assign it to `%s`?'
+msg2 <- "Did you call `%s()` on `%s`?"
+
+ex() %>% {
+    check_function(., "raster") %>% check_arg("x") %>% check_equal(incorrect_msg = sprintf(msg1, "raster", "canopy", "canopy"), append = FALSE)
+    # TODO: Why are you not working?
+    check_object(., "canopy")
+    check_output_expr(., "extent(canopy)", missing_msg = sprintf(msg2, "extent", "canopy"), append = FALSE)
+    #check_code(., "extent(canopy)", fixed = TRUE, missing_msg = sprintf(msg2, "extent", "canopy"), append = FALSE)
+    # TODO: Why are you not working?
+    check_output_expr(., "ncell(canopy)", missing_msg = sprintf(msg2, "ncell", "canopy"), append = FALSE)
+    #check_code(., "ncell(canopy)", fixed = TRUE, missing_msg = sprintf(msg2, "ncell", "canopy"), append = FALSE)
+    check_error(.)
+}
+
 success_msg("You did it!")
 ```
 
