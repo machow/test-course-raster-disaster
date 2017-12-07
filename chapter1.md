@@ -5,7 +5,7 @@ description: >-
 
 
 ---
-## Load canopy data from tif
+## Canopy
 
 ```yaml
 type: NormalExercise
@@ -25,8 +25,6 @@ Run the code to download the tif file and import it as a raster object.
 
 `@pre_exercise_code`
 ```{r}
-library(raster)
-
 download.file(
   "http://s3.amazonaws.com/assets.datacamp.com/production/course_5973/datasets/canopy.zip", 
   "canopy.zip"
@@ -106,31 +104,130 @@ Run the code.
 
 `@pre_exercise_code`
 ```{r}
-library(raster)
-
 download.file(
   "http://s3.amazonaws.com/assets.datacamp.com/production/course_5973/datasets/canopy.zip", 
   "canopy.zip"
 )
 
-Sys.sleep(0.5)
+
 unzip("canopy.zip")
-
-
-
 ```
 
 `@sample_code`
 ```{r}
+# Load the raster package
+library(raster)
+
+# Read in the rasters
 canopy <- raster("canopy.tif")
+
+# Get the extent of the canopy object
+extent(canopy)
+
+ncell(canopy)
 ```
 
 `@solution`
 ```{r}
+# Load the raster package
+library(raster)
+
+# Read in the rasters
 canopy <- raster("canopy.tif")
+
+# Get the extent of the canopy object
+extent(canopy)
+
+ncell(canopy)
 ```
 
 `@sct`
 ```{r}
+msg1 <- 'Did you call `%s()` on `"%s.tif"` and assign it to `%s`?'
+msg2 <- "Did you call `%s()` on `%s`?"
 
+ex() %>% {
+    check_function(., "raster") %>% check_arg("x") %>% check_equal(incorrect_msg = sprintf(msg1, "raster", "canopy", "canopy"), append = FALSE)
+    # TODO: Why are you not working?
+    check_output_expr(., "extent(canopy)", missing_msg = sprintf(msg2, "extent", "canopy"), append = FALSE)
+    #check_code(., "extent(canopy)", fixed = TRUE, missing_msg = sprintf(msg2, "extent", "canopy"), append = FALSE)
+    # TODO: Why are you not working?
+    check_output_expr(., "ncell(canopy)", missing_msg = sprintf(msg2, "ncell", "canopy"), append = FALSE)
+    #check_code(., "ncell(canopy)", fixed = TRUE, missing_msg = sprintf(msg2, "ncell", "canopy"), append = FALSE)
+    check_error(.)
+}
+```
+
+
+
+---
+## Canopy - again and again
+
+```yaml
+type: NormalExercise
+key: 4d9ed80541
+lang: r
+xp: 100
+skills: 1
+```
+
+
+`@instructions`
+
+`@hint`
+
+`@pre_exercise_code`
+```{r}
+download.file(
+  "http://s3.amazonaws.com/assets.datacamp.com/production/course_5973/datasets/canopy.zip", 
+  "canopy.zip"
+)
+
+
+unzip("canopy.zip")
+```
+
+`@sample_code`
+```{r}
+# Load the raster package
+library(raster)
+
+# Read in the rasters
+canopy <- raster("canopy.tif")
+
+# Get the extent of the canopy object
+extent(canopy)
+
+ncell(canopy)
+```
+
+`@solution`
+```{r}
+# Load the raster package
+library(raster)
+
+# Read in the rasters
+canopy <- raster("canopy.tif")
+
+# Get the extent of the canopy object
+extent(canopy)
+
+ncell(canopy)
+```
+
+`@sct`
+```{r}
+msg1 <- 'Did you call `%s()` on `"%s.tif"` and assign it to `%s`?'
+msg2 <- "Did you call `%s()` on `%s`?"
+
+ex() %>% {
+    check_function(., "raster") %>% check_arg("x") %>% check_equal(incorrect_msg = sprintf(msg1, "raster", "canopy", "canopy"), append = FALSE)
+    # TODO: Why are you not working?
+    #check_output_expr(., "extent(canopy)", missing_msg = sprintf(msg2, "extent", "canopy"), append = FALSE)
+    #check_code(., "extent(canopy)", fixed = TRUE, missing_msg = sprintf(msg2, "extent", "canopy"), append = FALSE)
+    # TODO: Why are you not working?
+    check_output_expr(., "ncell(canopy)", missing_msg = sprintf(msg2, "ncell", "canopy"), append = FALSE)
+    #check_code(., "ncell(canopy)", fixed = TRUE, missing_msg = sprintf(msg2, "ncell", "canopy"), append = FALSE)
+    check_error(.)
+}
 ```
