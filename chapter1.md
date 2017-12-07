@@ -194,17 +194,17 @@ ex() %>% {
     check_function(., "raster") %>% check_arg("x") %>% check_equal(incorrect_msg = sprintf(msg1, "raster", "canopy", "canopy"), append = FALSE)
     check_function(., "brick") %>% check_arg("x") %>% check_equal(incorrect_msg = sprintf(msg1, "brick", "manhattan", "manhattan"), append = FALSE)
     # TODO: Why are you not working?
-    #check_output_expr(., "extent(canopy)", missing_msg = sprintf(msg2, "extent", "canopy"), append = FALSE)
-    check_code(., "extent(canopy)", fixed = TRUE, missing_msg = sprintf(msg2, "extent", "canopy"), append = FALSE)
+    check_output_expr(., "extent(canopy)", missing_msg = sprintf(msg2, "extent", "canopy"), append = FALSE)
+    #check_code(., "extent(canopy)", fixed = TRUE, missing_msg = sprintf(msg2, "extent", "canopy"), append = FALSE)
     # TODO: Why are you not working?
-    #check_output_expr(., "crs(manhattan)", missing_msg = sprintf(msg2, "crs", "manhattan"), append = FALSE)
-    check_code(., "crs(manhattan)", fixed = TRUE, missing_msg = sprintf(msg2, "crs", "manhattan"), append = FALSE)
+    check_output_expr(., "crs(manhattan)", missing_msg = sprintf(msg2, "crs", "manhattan"), append = FALSE)
+    #check_code(., "crs(manhattan)", fixed = TRUE, missing_msg = sprintf(msg2, "crs", "manhattan"), append = FALSE)
     # TODO: Why are you not working?
-    #check_output_expr(., "ncell(manhattan)", missing_msg = sprintf(msg2, "ncell", "manhattan"), append = FALSE)
-    check_code(., "ncell(manhattan)", fixed = TRUE, missing_msg = sprintf(msg2, "ncell", "manhattan"), append = FALSE)
+    check_output_expr(., "ncell(manhattan)", missing_msg = sprintf(msg2, "ncell", "manhattan"), append = FALSE)
+    #check_code(., "ncell(manhattan)", fixed = TRUE, missing_msg = sprintf(msg2, "ncell", "manhattan"), append = FALSE)
     # TODO: Why are you not working?
-    #check_output_expr(., "ncell(canopy)", missing_msg = sprintf(msg2, "ncell", "canopy"), append = FALSE)
-    check_code(., "ncell(canopy)", fixed = TRUE, missing_msg = sprintf(msg2, "ncell", "canopy"), append = FALSE)
+    check_output_expr(., "ncell(canopy)", missing_msg = sprintf(msg2, "ncell", "canopy"), append = FALSE)
+    #check_code(., "ncell(canopy)", fixed = TRUE, missing_msg = sprintf(msg2, "ncell", "canopy"), append = FALSE)
     check_error(.)
 }
 
